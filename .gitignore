@@ -1,3 +1,5 @@
 _site/*
 *~
 node_modules
+assets/css/*min*
+assets/js/*min*
