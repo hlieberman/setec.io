@@ -1,14 +1,14 @@
 ---
 layout: page
 permalink: /about/index.html
-title: About the Theme
-tagline: HMFAYSAL V2, a Jekyll Theme
-tags: [about, Jekyll, theme, responsive]
-modified: 9-9-2013
+title: About the Author
+tagline:
+tags: [about, Harlan]
+modified: 2014-08-08
 image:
-  feature: texture-feature-02.jpg
-  credit: Texture Lovers
-  creditlink: http://texturelovers.com
+  feature: about.jpg
+  credit: Lingua, by Jim Sanborn (CC-SA)
+  creditlink: http://www.flickr.com/photos/bootbearwdc/3155086536/
 ---
 
 My name is **Hossain Mohd. Faysal**, I am an MSc + PhD candidate in *Electrical Engineering* at the [School of Engineering and Applied Science](http://www.seas.upenn.edu/) at **University of Pennsylvania**. I am licensed as a Professional Engineer (P.E) to practice in the states of Texas, Massachusetts and California. I graduated with a B.Sc degree in EECS from Texas A&M University in 2011 and with a B.Sc degree in Mathematics from Massachusetts Institute of Technology in 2012, and currently focusing on Electrical Engineering for my post-graduate studies.   
