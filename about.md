@@ -7,7 +7,7 @@ tags: [about, Harlan, meta]
 modified: 2014-08-08
 image:
   feature: about.jpg
-  credit: Lingua, by Jim Sanborn (CC-SA)
+  credit: Lingua, by Jim Sanborn (CC-BY)
   creditlink: http://www.flickr.com/photos/bootbearwdc/3155086536/
 ---
 

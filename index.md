@@ -1,9 +1,9 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+description: No More Secrets
+tags: [home, Harlan, meta]
 image:
-  feature: texture-feature-01.jpg
-  credit: Texture Lovers
-  creditlink: http://texturelovers.com
+  feature: home.jpg
+  credit: thebarrowboy (CC-BY)
+  creditlink: http://www.flickr.com/photos/48778414@N04/5933744655
 ---
