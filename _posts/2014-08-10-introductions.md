@@ -4,10 +4,10 @@ title: Introductions
 Description: "Hello, I'm Harlan.  It's nice to meet you."
 category: articles
 tags: [meta]
-#image:
-#  feature: introduction.jpg
-#  credit: Slack12 (CC-BY-NC-ND, with special permission)
-#  creditlink: https://www.flickr.com/photos/slack12/2196515792
+image:
+  feature: introduction.jpg
+  credit: Slack12 (CC-BY-NC-ND, modified with special permission)
+  creditlink: https://www.flickr.com/photos/slack12/2196515792
 ---
 Hello, readers - or reader, quite possibly.  It's nice to meet you. My [about page]({{ site.url }}/about) explains a bit about what this blog will be about in more detail than I will say here as "musings, rants, and perhaps a very occasional bit of sense".  The about page, however, does not answer perhaps a more interesting question - why?
 
