@@ -1,0 +1,22 @@
+---
+layout: post
+title: DebConf Retrospective
+description: "Returning from DC14"
+category: articles
+tags: [dc14, debconf, debian, travel, f/oss]
+---
+Once more, back in the air, just a bit beneath the route that I took on my way out to Portland.  The last nine days have been hectic and, in many ways, very different than I was expecting.  In other ways, though, it was exactly what I expected.  To-do lists definitely breed, that's for sure.
+
+I've been to many other tech conferences before, but this didn't have nearly the same feel to it.  It was more than simply a bunch of engineers with some common interest gathering together; as cliché as it is to write, it felt more like a gathering of friends.  Sure, there were talks aplenty, and those were familiar enough.  Perhaps it was just the regularity - the number of years that some of the other conferencegoers had been attending different DebConfs all over the world.
+
+I think leaving it at that, though, would be a disservice; it's not the first time I've thought that Debian was one of the most welcoming communities that I've been a part of in the free software movement.  I certainly made new friends, and even as I fly back home, I'm eagerly looking forward to the next DebConf in Heidelberg.
+
+Emotional sappiness through, let's turn talk to the tech.  The most significant thing that I worked on while at DebConf in terms of technical complexity, if not impact, was the debugging of a build failure in [NanoMsg::Raw](http://search.cpan.org/dist/NanoMsg-Raw/lib/NanoMsg/Raw.pm), thanks in a very large part to help from my friend olasd - Nicolas Dandrimont.  The [build failure](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=756350) wasn't an easy one for me to understand - it was a segfault coming from somewhere inside either the XS, inside the underlying library, or as some race condition somewhere in between.  Adding to the complexity was the fact that the NanoMsg::Raw package already had some test failures that were false positives, and the underlying library with its own set of test suite difficulties.
+
+We finally narrowed the intermittent failure down to an uninitialized variable in the XS code in NanoMsg::Raw that was causing two of the builds to fail - the primary cause of [the bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=756350).  The fix ended up being two lines - initializing the variable and switching from an mPUSHs to an mXPUSHs to make sure there was enough room on the stack.  Of course, one thing so often leads to another, and the package still fails to build properly due to another failure, as well as various architecture-specific problems that the upstreams are working on fixing.
+
+That and getting a few moments to upload updated versions of packages for the pkg-perl team was the only things that I had planned on getting done that I had any chance to do, but I found a few other projects that are very interesting.  I worked with Raphael Geissert on some changes to the code editor for [sources.debian.org](https://sources.debian.org/).  The version currently there, codeeditor, was causing tremendous javascript slowdowns when large amounts of code were loaded into it - almost up to ten seconds, on resource-constrained hardware.  Raphael and I tried to dig into the why for several hours, but we ended up with the belief that the problems were structural, not a minor bug, in how the codeeditor system was doing the actual highlighting and formatting.  The package was using individualized spans to do it, causing memory to jump into the hundreds of megabytes when large files were opened, as well as the achingly slow render time that drew our attention in the first place.
+
+In the end, we decided to jump ship to another, somewhat similar library: [Ace](http://ajaxorg.github.io/ace/), the editor that [Cloud9](https://c9.io) develops and the descendant of the Mozilla Skyline project.  Integration isn't fully complete yet, but the initial results look great.  The performance is fantastic, the quality is excellent, and all in all, the Ace editor seems to be a very well thought out piece of tech.  I hope to work with Raphael on finishing the last bits of it off in the next coming weeks, and I hope that you will be able to see the results soon for yourself.
+
+A lot more than that happened, and far more than I could write down here.  Even though the conference is barely over, I am eagerly looking forward to seeing everyone again at DebConf 15 in Heidelberg.
